@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<header class="mb-8 text-center">
+    <h1 class="text-3xl font-bold text-gray-800">GitHub Follower Checker</h1>
+    <p class="text-gray-600">Enter a GitHub username to check followers and following status.</p>
+</header>
+
+<div class="bg-white shadow-md rounded-lg p-6">
+    <input type="text" id="username" placeholder="Enter GitHub Username" class="border p-2 w-full rounded" />
+    <button id="checkBtn" class="mt-4 bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 transition">Check Status</button>
+
+    <div id="loading" class="loading mt-4 hidden">
+        <p class="text-center text-blue-600">Loading...</p>
+    </div>
+
+    <div id="profilePicture" class="mt-4 hidden text-center">
+        <img id="userAvatar" src="" alt="User Avatar" class="rounded-full w-24 h-24 mx-auto" />
+        <p id="userName" class="mt-2 font-semibold text-xl"></p>
+    </div>
+
+    <div id="result" class="mt-4"></div>
+</div>
+
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+{% endblock %}
+
