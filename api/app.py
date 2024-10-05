@@ -40,9 +40,6 @@ def scrape_github_data(base_url, end_message, username, tab):
         # Build the URL with the current page number in the correct position
         url = f"{base_url}?page={page}&tab={tab}"
         
-        # Print the current page being scraped
-        print(f"Scraping {url}...")
-        
         # Send a request to fetch the HTML content
         response = requests.get(url)
         html = response.text
@@ -53,7 +50,6 @@ def scrape_github_data(base_url, end_message, username, tab):
         # Check if the end message is in the HTML content
         soup = BeautifulSoup(html, 'html.parser')
         if end_message in soup.text:
-            print(f"End message found on page {page}.")
             break  # Stop scraping when the end message is found
         
         # Increment the page number for the next iteration
