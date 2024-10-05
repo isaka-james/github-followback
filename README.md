@@ -3,6 +3,8 @@
 ## Introduction
 Yo, welcome to the **GitHub Profile Viewer**! This is your ultimate tool to check out GitHub accounts like a pro. Whether you’re hunting for followers, checking who’s ghosting you, or just snooping around, this web app’s got you covered. 
 
+[Live](https://githubfollow.vercel.app )
+
 ## Features
 - **Slick Interface**: We’ve made it super easy to use. The design is inspired by GitHub’s clean vibes, so you’ll feel right at home.
 - **Real-Time Data**: Just drop a username, and boom! You get the latest stats on your fave GitHub peeps.
