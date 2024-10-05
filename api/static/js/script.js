@@ -87,7 +87,15 @@ resultDiv.innerHTML = `
         })
         .catch(error => {
             loadingDiv.classList.remove("active");
-            resultDiv.innerHTML = `<p class="text-red-500">Error: ${error.message}</p>`;
+            //resultDiv.innerHTML = `<p class="text-red-500">Error: ${error.message}</p>`;
+resultDiv.innerHTML = `
+    <div class="bg-red-100 border-l-4 border-red-500 text-red-700 p-4 rounded-md">
+        <p class="font-semibold text-lg">Whoa! Looks like you have a massive follower or following count, and we’re hitting Vercel's 10-second scrape limit! 😅</p>
+        <p>Sorry, we couldn’t fetch all your data from GitHub in time. If you'd consider sponsoring, we could scrape faster and go deeper into your GitHub world!</p>
+        <p>If you've got a buddy with fewer followers, feel free to test their account and see it in action! 😎</p>
+    </div>
+`;
+
         });
 });
 
