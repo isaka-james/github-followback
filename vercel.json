@@ -11,11 +11,11 @@
             "dest": "api/app.py"
         }
     ],
-	  "functions": {
-        "api/app.py": {
-          "maxDuration": 30
-         }
-	  }
+  "functions": {
+    "api/**/*.py": {
+      "maxDuration": 30
+    }
+  }
 
 
 }
