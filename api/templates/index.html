@@ -7,18 +7,68 @@
 </header>
 
 <div class="bg-white shadow-md rounded-lg p-6">
-    <input type="text" id="username" placeholder="Enter GitHub Username" class="border p-2 w-full rounded" />
-    <button id="checkBtn" class="mt-4 bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 transition">Check Status</button>
+    <!-- GitHub Username Input -->
+    <input type="text" id="username" placeholder="Enter GitHub Username" class="border p-2 w-full rounded mb-4">
 
-    <div id="loading" class="loading mt-4 hidden">
-        <p class="text-center text-blue-600">Loading...</p>
+    <!-- Clickable Text for Unfollow Feature -->
+    <p id="unfollowToggleText" class="text-center text-blue-600 underline cursor-pointer hover:text-blue-800 transition">
+        Unfollow anyone who didn't follow back?
+    </p>
+
+<div id="github-fields" class="mb-6 bg-gray-50 p-4 rounded-lg shadow-md hidden">
+    <h3 class="text-lg font-semibold text-gray-800 mb-2">Unfollow Options</h3>
+    
+    <div class="flex items-center mb-4">
+        <input type="checkbox" id="unfollowNotFollowedBack" class="h-6 w-6 text-blue-600 border-gray-300 rounded focus:ring-blue-500">
+        <label for="unfollowNotFollowedBack" class="ml-3 text-gray-700 font-medium">
+            Unfollow all not followed back
+        </label>
     </div>
 
+    <div class="flex items-center mb-4">
+        <input type="checkbox" id="unfollowAllUsers" class="h-6 w-6 text-blue-600 border-gray-300 rounded focus:ring-blue-500">
+        <label for="unfollowAllUsers" class="ml-3 text-gray-700 font-medium">
+            Unfollow all users
+        </label>
+    </div>
+
+
+    <div class="flex items-center mb-4">
+        <input type="checkbox" id="fetchFollowings" class="h-6 w-6 text-blue-600 border-gray-300 rounded focus:ring-blue-500" checked disabled>
+        <label for="fetchFollowings" class="ml-3 text-gray-700 font-medium">
+            Fetching Followers & Following names
+        </label>
+    </div>
+
+    <input type="text" id="key" placeholder="(Optional) Enter GitHub API Key for Unfollowing" class="border border-gray-300 p-3 w-full rounded-md focus:ring focus:ring-blue-500 transition duration-150 ease-in-out">
+</div>
+
+<!-- Button to Check Status -->
+    <button id="checkBtn" class="mt-4 bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 transition w-full">
+        Magic
+    </button>
+
+	<!-- Loading Indicator -->
+	<div id="loading" class="loading mt-4 hidden  bg-gray-100 rounded-lg p-6 shadow-md max-w-md mx-auto">
+		<!-- Loading Animation -->
+		<img src="/static/img/loading.gif" alt="Loading Animation" class="block mx-auto w-1/3 mb-4 rounded-lg">
+		
+		<!-- Informational Text -->
+		<p class="text-center text-gray-800 mb-2">
+			Did you know? You can unfollow everyone who hasn’t followed you back by providing your GitHub API key!
+		</p>
+		<p class="text-center text-gray-500 text-sm">
+			(We don’t store any key; all our code is <a href="https://github.com/isaka-james/github-followback" target="_blank" class="text-blue-500 underline hover:text-blue-700">open-sourced!</a>)
+		</p>
+	</div>
+
+    <!-- Profile Picture Display -->
     <div id="profilePicture" class="mt-4 hidden text-center">
-        <img id="userAvatar" src="" alt="User Avatar" class="rounded-full w-24 h-24 mx-auto" />
+        <img id="userAvatar" src="" alt="User Avatar" class="rounded-full w-24 h-24 mx-auto">
         <p id="userName" class="mt-2 font-semibold text-xl"></p>
     </div>
 
+    <!-- Results Display -->
     <div id="result" class="mt-4"></div>
 </div>
 
